@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+
+cd "$(dirname "$0")"
+
+echo "Installing production dependencies..."
+npm ci --omit=dev
+
+echo "Deployment dependencies installed successfully."
