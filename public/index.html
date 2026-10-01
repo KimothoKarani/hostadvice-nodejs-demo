@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A HostAdvice Node.js deployment demo running on ScalaHosting with SPanel.">
+  <title>Node.js on ScalaHosting | HostAdvice Deployment Demo</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/" aria-label="HostAdvice Node.js Demo home">
+        <span class="brand-mark">H</span>
+        <span>HostAdvice Node.js Demo</span>
+      </a>
+
+      <div class="header-meta">
+        <span>Node.js</span>
+        <span>Express</span>
+        <span>SPanel</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">HOSTADVICE / DEPLOYMENT TEST</p>
+        <h1>Node.js deployment on ScalaHosting</h1>
+        <p class="hero-text">
+          A working Express application prepared for a hands-on HostAdvice guide to deploying
+          Node.js with SPanel. The page reads live data from the backend so we can verify the
+          application after deployment.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-dark" href="/health" target="_blank" rel="noreferrer">Open health endpoint</a>
+          <button class="button button-light" type="button" id="refresh-status">Refresh status</button>
+        </div>
+      </div>
+
+      <aside class="status-board" aria-label="Deployment status">
+        <div class="status-board-head">
+          <span>deployment-status</span>
+          <div id="top-status" class="service-state">
+            <span class="status-dot"></span>
+            <span>Checking service</span>
+          </div>
+        </div>
+
+        <div class="status-row">
+          <span>application</span>
+          <strong>HostAdvice Node.js Demo</strong>
+        </div>
+        <div class="status-row">
+          <span>runtime</span>
+          <strong id="node-version">—</strong>
+        </div>
+        <div class="status-row">
+          <span>version</span>
+          <strong id="app-version">—</strong>
+        </div>
+        <div class="status-row">
+          <span>environment</span>
+          <strong id="environment">—</strong>
+        </div>
+        <div class="status-row">
+          <span>health</span>
+          <strong id="service-status">Checking...</strong>
+        </div>
+
+        <div class="board-footer">
+          <span id="service-status-note">Contacting the Node.js API</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metrics-wrap">
+      <div class="shell metrics">
+        <article class="metric">
+          <span class="metric-label">01 / STATUS</span>
+          <strong id="metric-status">Healthy</strong>
+          <small>Node.js API response</small>
+        </article>
+
+        <article class="metric">
+          <span class="metric-label">02 / VERSION</span>
+          <strong id="metric-version">v1.0.0</strong>
+          <small>Current release</small>
+        </article>
+
+        <article class="metric">
+          <span class="metric-label">03 / ENVIRONMENT</span>
+          <strong id="metric-environment">Development</strong>
+          <small>Runtime mode</small>
+        </article>
+
+        <article class="metric">
+          <span class="metric-label">04 / UPTIME</span>
+          <strong id="uptime">—</strong>
+          <small>Current process</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell details-section">
+      <div class="section-heading">
+        <p class="eyebrow">RUNTIME DETAILS</p>
+        <h2>What the server is reporting</h2>
+      </div>
+
+      <div class="details-grid">
+        <div class="details-table">
+          <div class="detail-row">
+            <span>Process ID</span>
+            <strong id="process-id">—</strong>
+          </div>
+          <div class="detail-row">
+            <span>Protocol</span>
+            <strong id="protocol">—</strong>
+          </div>
+          <div class="detail-row">
+            <span>Hostname</span>
+            <strong id="hostname">—</strong>
+          </div>
+          <div class="detail-row">
+            <span>Server time</span>
+            <strong id="server-time">—</strong>
+          </div>
+        </div>
+
+        <div class="deployment-notes">
+          <p class="eyebrow">DEPLOYMENT PATH</p>
+          <ol>
+            <li><span>01</span> Push code to GitHub</li>
+            <li><span>02</span> Pull with SPanel Git Version Control</li>
+            <li><span>03</span> Run with Node.js Manager</li>
+            <li><span>04</span> Verify the public HTTPS endpoint</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell verify-section">
+      <div>
+        <p class="eyebrow">VERIFY FROM THE TERMINAL</p>
+        <h2>Check the health endpoint directly</h2>
+      </div>
+
+      <div class="verification-code">
+        <code>curl <span id="curl-url">http://localhost:3100/health</span></code>
+        <button type="button" id="copy-curl">Copy</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span>HostAdvice Node.js Demo v<span id="footer-version">1.0.0</span></span>
+      <span>Node.js + Express</span>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

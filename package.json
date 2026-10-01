@@ -1,0 +1,24 @@
+{
+  "name": "hostadvice-nodejs-demo",
+  "version": "1.0.0",
+  "description": "A Node.js and Express deployment demo built for HostAdvice's ScalaHosting SPanel tutorial.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "scalahosting",
+    "spanel",
+    "deployment-demo"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
